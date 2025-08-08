@@ -1,0 +1,144 @@
+/* Contenedor principal de la sección de galería */
+.galeria-container {
+  padding: 15px 35px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título principal de la galería */
+.galeria-title {
+  font-size: 2.8rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+/* Color de acento para el título */
+.galeria-title span {
+  color: #3498db;
+}
+
+/* Subtítulo descriptivo */
+.galeria-subtitle {
+  font-size: 1.3rem;
+  color: #555;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cuadrícula que contiene las imágenes */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Contenedor de cada imagen individual */
+.galeria-item {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  height: 250px; /* Altura fija para uniformidad */
+}
+
+/* La imagen dentro del contenedor */
+.galeria-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Efecto de zoom al pasar el ratón sobre la imagen */
+.galeria-item:hover .galeria-image {
+  transform: scale(1.1);
+}
+
+/* Capa de superposición que aparece al pasar el ratón */
+.galeria-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 62, 80, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.galeria-item:hover .galeria-overlay {
+  opacity: 1;
+}
+
+/* Icono dentro de la capa de superposición */
+.overlay-icon {
+  font-size: 3rem;
+  color: white;
+  transform: scale(0.8);
+  transition: transform 0.4s ease;
+}
+
+.galeria-item:hover .overlay-icon {
+  transform: scale(1);
+}
+
+/* --- Estilos para el Modal (Lightbox) --- */
+
+/* Fondo oscuro del modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeInModal 0.3s ease;
+}
+
+/* Contenido del modal (la imagen) */
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Botón para cerrar el modal */
+.modal-close-button {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

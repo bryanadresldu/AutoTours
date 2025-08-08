@@ -1,0 +1,130 @@
+/* --- Contenedor Principal de la Sección de Testimonios --- */
+.testimonials-section {
+  padding: 15px 35px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  max-width: 1200px;
+  margin: 1px auto;
+  overflow: hidden;
+}
+
+/* --- Títulos de la Sección --- */
+.testimonials-title {
+  font-size: 2.8rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.testimonials-title span {
+  color: #3498db; /* Color de acento consistente */
+}
+
+.testimonials-subtitle {
+  font-size: 1.3rem;
+  color: #555;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Contenedor de las Tarjetas de Testimonios --- */
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* --- Tarjeta Individual de Testimonio --- */
+.testimonial-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 380px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid #3498db; /* Detalle de color */
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Texto del Testimonio --- */
+.testimonial-text {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+  font-style: italic;
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1; /* Empuja al usuario hacia abajo */
+  text-align: left;
+}
+
+/* --- Información del Usuario --- */
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto; /* Se alinea al final */
+}
+
+.testimonial-user-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #eaf5fc;
+}
+
+.testimonial-user-info {
+  text-align: left;
+}
+
+.testimonial-user-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.testimonial-user-info span {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+/* --- Diseño Responsivo --- */
+@media (max-width: 992px) {
+  .testimonials-section {
+    padding: 15px 15px;
+  }
+
+  .testimonials-title {
+    font-size: 2.4rem;
+  }
+
+  .testimonials-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonials-title {
+    font-size: 1.8rem;
+  }
+
+  .testimonials-subtitle {
+    font-size: 1rem;
+  }
+  
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+}

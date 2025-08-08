@@ -1,0 +1,224 @@
+.nosotros-container {
+  position: relative;
+  padding: 15px 35px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 1px auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nosotros-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.nosotros-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; 
+  gap: 40px;
+  width: 100%;
+}
+
+.nosotros-content,
+.nosotros-image-container {
+  background-color: transparent;
+  padding: 1rem;
+  border-radius: 15px;
+  z-index: 1;
+}
+
+.nosotros-content {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+}
+
+.nosotros-image-container {
+  flex: 1 1 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
+}
+
+.nosotros-tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+
+.nosotros-tab {
+  padding: 10px 20px;
+  font-size: 1.6rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  position: relative;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nosotros-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #0077cc;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease-out;
+}
+
+.nosotros-tab:hover {
+  color: #000;
+}
+
+.nosotros-tab.active {
+  color: #0077cc;
+}
+
+.nosotros-tab.active::after {
+  transform: scaleX(1);
+}
+
+.nosotros-info {
+  padding: 10px 0;
+  animation: fadeIn 0.5s ease-in-out;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-title {
+  font-size: 2.2rem;
+  margin: 0 0 15px 0;
+  color: #3498db;
+}
+
+.info-text {
+  font-size: 1.5rem;
+  line-height: 2.2;
+  text-align: justify;
+  margin: 0;
+  color: #555;
+}
+
+.nosotros-image {
+  width: 100%;
+  max-width: 500px;
+  height: 300px; 
+  border-radius: 15px;
+  object-fit: cover; 
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.nosotros-image:hover {
+  transform: scale(1.03);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Diseño Responsivo --- */
+@media (max-width: 992px) {
+  .nosotros-container {
+    padding: 15px 15px;
+  }
+
+  .nosotros-title {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+  }
+
+  .nosotros-body {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .nosotros-content {
+    order: 1;
+    flex: 100%;
+  }
+
+  .nosotros-image-container {
+    order: 2;
+    flex: 100%;
+    margin-top: 0px;
+  }
+
+  .nosotros-image {
+    max-width: 100%;
+    height: 300px;
+  }
+
+  .nosotros-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nosotros-tab {
+    font-size: 1.4rem;
+    padding: 8px 15px;
+  }
+
+  .info-title {
+    font-size: 1.8rem;
+  }
+
+  .info-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .nosotros-title {
+    font-size: 1.8rem;
+  }
+
+  .nosotros-tabs {
+    gap: 5px;
+  }
+
+  .nosotros-tab {
+    font-size: 1.2rem;
+    padding: 6px 10px;
+  }
+
+  .info-title {
+    font-size: 1.5rem;
+  }
+
+  .info-text {
+    font-size: 0.9rem;
+  }
+
+  .nosotros-content,
+  .nosotros-image-container {
+    padding: 1rem;
+  }
+
+  .nosotros-image {
+    height: 250px;
+  }
+}

@@ -1,0 +1,17 @@
+.page-content {
+  padding-top: 275px; /* Valor por defecto para pantallas grandes */
+}
+
+/* Media query para móviles (hasta 768px, ajustable según necesidad) */
+@media (max-width: 768px) {
+  .page-content {
+    padding-top: 180px; /* Reduce el padding superior en móviles */
+  }
+}
+
+/* Media query existente para pantallas grandes (mantiene el diseño original) */
+@media (min-width: 992px) {
+  .page-content {
+    padding-top: 100px; /* Valor para escritorio, sin cambios */
+  }
+}

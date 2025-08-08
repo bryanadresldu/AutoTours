@@ -1,0 +1,303 @@
+/* Contenedor principal de la sección */
+.contacto-section {
+  padding: 15px 35px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor del layout de 2 columnas */
+.contacto-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* --- Columna Izquierda: Formulario --- */
+.contacto-form-wrapper {
+  flex: 1.2;
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Lista introductoria */
+.contacto-intro-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.contacto-intro-list li {
+  color: #555;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 15px;
+}
+
+.contacto-intro-list li p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Estilo para los iconos de la introducción */
+.intro-icon {
+  background-color: #eaf5fc;
+  color: #3498db;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* Título del formulario */
+.contacto-form-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #3498db;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* Formulario */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Grupo de input + icono */
+.form-group {
+  position: relative;
+}
+
+/* Icono dentro del input */
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 1.1rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 13px;
+  font-family: inherit;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Padding para que el texto no se solape con el icono */
+.form-input {
+  padding-left: 45px;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #999;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+}
+
+/* Cambia el color del icono cuando el input está enfocado */
+.form-input:focus + .input-icon,
+.form-group:focus-within .input-icon {
+  color: #3498db;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Checkbox */
+.form-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-size: 11px;
+  color: #555;
+}
+
+.form-checkbox-label input {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.form-checkbox-label a {
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form-checkbox-label a:hover {
+  text-decoration: underline;
+}
+
+/* Botón de envío */
+.form-submit-button {
+  background-color: #2980b9;
+  color: white;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.form-submit-button:hover {
+  background-color: #1c5980;
+  transform: translateY(-2px);
+}
+
+/* --- Columna Derecha: Mapa --- */
+.contacto-map-wrapper {
+  flex: 1;
+  min-height: 500px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  display: flex; /* Asegura que el contenedor sea un flex para alinear el iframe */
+  flex-direction: column; /* Alinea el iframe verticalmente */
+}
+
+.contacto-map-wrapper iframe {
+  width: 100%;
+  height: 100%; /* Asegura que el iframe ocupe toda la altura del contenedor */
+  border: 0;
+  flex-grow: 1; /* Permite que el iframe crezca para llenar el espacio */
+}
+
+/* --- Diseño Responsivo --- */
+@media (max-width: 992px) {
+  .contacto-section {
+    padding: 15px 15px;
+  }
+
+  .contacto-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contacto-form-wrapper {
+    order: 1;
+    padding: 1.5rem;
+  }
+
+  .contacto-map-wrapper {
+    order: 2;
+    min-height: 300px;
+  }
+
+  .contacto-form-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contacto-intro-list li {
+    font-size: 14px;
+    gap: 0.8rem;
+  }
+
+  .intro-icon {
+    min-width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 12px;
+    padding: 0.7rem;
+  }
+
+  .input-icon {
+    font-size: 1rem;
+    left: 12px;
+  }
+
+  .form-input {
+    padding-left: 40px;
+  }
+
+  .form-submit-button {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contacto-section {
+    padding: 10px 10px;
+  }
+
+  .contacto-form-wrapper {
+    padding: 1rem;
+  }
+
+  .contacto-form-title {
+    font-size: 1.4rem;
+  }
+
+  .contacto-intro-list li {
+    font-size: 12px;
+    gap: 0.6rem;
+  }
+
+  .intro-icon {
+    min-width: 25px;
+    height: 25px;
+    font-size: 0.9rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 11px;
+    padding: 0.6rem;
+  }
+
+  .input-icon {
+    font-size: 0.9rem;
+    left: 10px;
+  }
+
+  .form-input {
+    padding-left: 35px;
+  }
+
+  .form-submit-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .contacto-map-wrapper {
+    min-height: 250px;
+  }
+}
