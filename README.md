@@ -1,5 +1,5 @@
 
-<img width="1920" height="2677" alt="CapturaPagina" src="https://github.com/user-attachments/assets/9084c707-dfae-4286-957f-55a146217922" />
+<img width="1920" height="6150" alt="despliegue" src="https://github.com/user-attachments/assets/0c440fc1-f586-4643-bee7-b05205c4b853" />
 
 # React + Vite
 
